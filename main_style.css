@@ -1,0 +1,59 @@
+body {
+    font-size: 16px;
+    margin: 1.5em auto;
+    max-width: 1000px;
+    padding: 1em;
+    line-height: 1.4;
+}
+
+p, ul, section {
+    color: black;
+    font-family: 'Consolas', "courier new";
+}
+
+div.border1 {
+    border-left: solid yellow;
+    background-color: rgb(255, 255, 204);
+    font-family: 'Consolas', "courier new";
+    padding: 10px 10px 10px 10px;
+    margin: 2em auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    color: black;
+    font-family: 'Consolas', "courier new";
+    font-weight: bold;
+}
+
+strong {
+    color: red;
+    font-family: 'Consolas', "courier new";
+    background-color: rgb(255, 204, 204);
+}
+
+code {
+    font-family: Consolas, "courier new";
+    color: crimson;
+    background-color: rgb(241, 241, 241);
+    padding: 2px;
+    font-size: 105%;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    background-color: rgb(244, 244, 244);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {background-color: rgb(31, 31, 31)}
+    p, ul, section, h1, h2, h3, h4, h5, h6 {color: white}
+    a:link {color: rgb(0, 162, 232)}
+    a:visited {color: rgb(63, 72, 204)}
+}
