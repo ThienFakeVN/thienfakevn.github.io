@@ -36,11 +36,11 @@
             resultDiv.innerHTML = ""
 
             if (isNaN(players) || players <= 0) {
-                resultDiv.innerHTML = "⚠️ The amount of players must be greater than 0!"
+                resultDiv.innerHTML = "The number of players must be greater than 0!"
                 return
             }
             if (players > 17) {
-                resultDiv.innerHTML = "⚠️ Too many players! At most 17!"
+                resultDiv.innerHTML = "Too many players! At most 17!"
                 return
             }
 
@@ -49,7 +49,7 @@
                         "A♣","2♣","3♣","4♣","5♣","6♣","7♣","8♣","9♣","10♣","J♣","Q♣","K♣",
                         "A♦","2♦","3♦","4♦","5♦","6♦","7♦","8♦","9♦","10♦","J♦","Q♦","K♦",
                         "A♥","2♥","3♥","4♥","5♥","6♥","7♥","8♥","9♥","10♥","J♥","Q♥","K♥",
-                    ]
+            ]
 
             for (let i = pack.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -65,11 +65,13 @@
                 let points
                 if (ranks.every(r => ["J","Q","K"].includes(r))) {points = "Ba cào!!!"}
                 else {
-                    let values = ranks.map(r => {
-                    if (["J","Q","K"].includes(r)) return 10
-                    if (r === "A") return 1
-                    return parseInt(r)
-                    })
+                    let values = ranks.map(
+                        r => {
+                            if (["J","Q","K"].includes(r)) return 10
+                            if (r === "A") return 1
+                            return parseInt(r)
+                        }
+                    )
                 points = values.reduce((a,b) => a+b, 0) % 10
                 }
 
