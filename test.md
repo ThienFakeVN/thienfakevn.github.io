@@ -3,6 +3,6 @@ title: Home
 layout: default
 ---
 
-# Hello World
+Idk lol
 
-This page uses a Jekyll layout.
+What if we...
