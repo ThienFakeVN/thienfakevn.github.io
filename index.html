@@ -19,7 +19,31 @@
         <li><a href="countdown-till-new-year/index.html">Countdown till (Lunar) New Year</a> (I'm still working on! but maybe never...)</li>
         <li><i>Cooming soon!</i></li>
     </ul>
-    <iframe id="14261781" allowtransparency="true" frameborder="0" style="width:100%;border:none;" src="https://www.chess.com/emboard?id=14261781"></iframe><script nonce="chesscom-diagram">window.addEventListener("message",e=>{e['data']&&"14261781"===e['data']['id']&&document.getElementById(`${e['data']['id']}`)&&(document.getElementById(`${e['data']['id']}`).style.height=`${e['data']['frameHeight']+37}px`)});</script>
-    <iframe id="14394261" allowtransparency="true" frameborder="0" style="width:100%;border:none;" src="https://www.chess.com/emboard?id=14394261"></iframe><script nonce="chesscom-diagram">window.addEventListener("message",e=>{e['data']&&"14394261"===e['data']['id']&&document.getElementById(`${e['data']['id']}`)&&(document.getElementById(`${e['data']['id']}`).style.height=`${e['data']['frameHeight']+37}px`)});</script>
+    <!--<iframe id="14261781" allowtransparency="true" frameborder="0" style="width:100%;border:none;" src="https://www.chess.com/emboard?id=14261781"></iframe><script nonce="chesscom-diagram">window.addEventListener("message",e=>{e['data']&&"14261781"===e['data']['id']&&document.getElementById(`${e['data']['id']}`)&&(document.getElementById(`${e['data']['id']}`).style.height=`${e['data']['frameHeight']+37}px`)});</script>
+    <iframe id="14394261" allowtransparency="true" frameborder="0" style="width:100%;border:none;" src="https://www.chess.com/emboard?id=14394261"></iframe><script nonce="chesscom-diagram">window.addEventListener("message",e=>{e['data']&&"14394261"===e['data']['id']&&document.getElementById(`${e['data']['id']}`)&&(document.getElementById(`${e['data']['id']}`).style.height=`${e['data']['frameHeight']+37}px`)});</script>-->
+    <script>
+        // Function to get user data
+async function getUserData() {
+  try {
+    // 1. Send the request
+    const response = await fetch('https://pypi.org/pypi/countries-dictionary/json');
+
+    // 2. Check if the request was successful
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    // 3. Parse the JSON data
+    const user = await response.json();
+
+    // 4. Use the data
+    console.log(`Version: ${user.info.version}`);
+  } catch (error) {
+    console.error('There was an error:', error);
+  }
+}
+
+getUserData();
+    </script>
 </body>
 </html>
