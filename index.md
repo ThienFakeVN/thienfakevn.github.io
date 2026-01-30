@@ -1,3 +1,5 @@
+
+
 Xin chào / Hello / Здравствуйте!
 
 My name is &laquo;Ngô Trần Quang Thiện&raquo;, but you can call me &laquo;ThienFakeVN&raquo;.
