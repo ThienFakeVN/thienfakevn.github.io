@@ -1,7 +1,4 @@
 title: ThienFakeVN
-description: Random stuffs of Thiện
+description: My random stuffs
 theme: minima
-author:
-    name: Ngô Trần Quang Thiện
-    email: quangthienngotran@gmail.com
-favicon: /assets/favicon.ico
+logo: /assets/favicon.ico
