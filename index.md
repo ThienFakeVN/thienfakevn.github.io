@@ -1,4 +1,4 @@
-<link rel="icon" href="/assets/favicon.ico">
+<link rel="icon" href="../assets/favicon.ico">
 
 Xin chào / Hello / Здравствуйте!
 
