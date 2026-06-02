@@ -4,6 +4,7 @@ body {
     max-width: 1000px;
     padding: 1em;
     line-height: 1.4;
+    /*border-style: solid;*/
 }
 
 p, ul, section {
@@ -51,7 +52,13 @@ pre {
     border-radius: 5px;
 }
 
-button#main {
+a#box {
+    text-decoration: none;
+    display: block;
+    width: calc(100% / 5)
+}
+
+/*button#main {
     color: white;
     font-family: "Consolas", "courier new";
     font-size: 20px;
@@ -61,7 +68,7 @@ button#main {
     cursor: pointer
 }
 
-button#main:hover {background-color: seagreen}
+button#main:hover {background-color: seagreen}*/
 
 @media (prefers-color-scheme: dark) {
     body {background-color: rgb(31, 31, 31)}
