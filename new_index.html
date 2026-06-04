@@ -19,9 +19,32 @@
     <h1>Other utilities</h1>
     <p id="today"></p>
     <p>And so, these are your <i>Daily Stuffs</i>:</p>
-    <script>
+    <p>Oh hey, I haven't added the chess puzzle yet, but you can still check the board in Developer Mode/DevTools — it's in the console!</p>
+    <script type="module">
 const today = new Date()
 document.getElementById("today").innerHTML = `What's the date today? Yep, it is ${today.getDate()} ${today.toLocaleDateString("en-GB", {month: "long"})} ${today.getFullYear()}! Well, at least in your time zone.`
+
+import {Chess} from "https://esm.sh/chess.js"
+// import {} from "https://cdn.jsdelivr.net/npm/cm-chessboard@8/src/Chessboard.js"
+
+let moves = null
+async function GET() {
+    try {
+        const response = await fetch("https://lichess.org/api/puzzle/daily")
+        if (!response.ok) {throw new Error(`HTTPS error! ${response.status}`)}
+        const data = await response.json()
+        moves = data.game.pgn
+    }
+    catch (error) {console.error(error)}
+}
+await GET()
+moves = moves.split(" ")
+
+const board = new Chess()
+moves.forEach(movePlease)
+function movePlease(value, index, array) {board.move(value)}
+
+console.log(board.ascii())
     </script>
 </body>
 </html>
