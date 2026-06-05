@@ -3,6 +3,7 @@
 <head>
     <title>ThienFakeVN</title>
     <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cm-chessboard/assets/chessboard.css">
     <link rel="icon" href="assets/favicon.ico">
     <meta name="author" content="ThienFakeVN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,34 +18,16 @@
     </div>
     <p>You want more? <i>Coming soon!</i></p>
     <h1>Other utilities</h1>
-    <p id="today"></p>
-    <p>And so, these are your <i>Daily Stuffs</i>:</p>
-    <p>Oh hey, I haven't added the chess puzzle yet, but you can still check the board in Developer Mode/DevTools — it's in the console!</p>
-    <script type="module">
+    <p id="today">What's the date today? Let me check...</p>
+    <p id="andSo">And so, these are your <i>Daily Stuffs</i>:</p>
+    <p>(My apology, but the chess puzzle hasn't finished yet. Still, you can check out other things, or view today's puzzle's position and FEN in Developer Mode/DevTools.)</p>
+    <!--<div id="board"></div>-->
+    <p></p>
+    <script>
 const today = new Date()
-document.getElementById("today").innerHTML = `What's the date today? Yep, it is ${today.getDate()} ${today.toLocaleDateString("en-GB", {month: "long"})} ${today.getFullYear()}! Well, at least in your time zone.`
-
-import {Chess} from "https://esm.sh/chess.js"
-// import {} from "https://cdn.jsdelivr.net/npm/cm-chessboard@8/src/Chessboard.js"
-
-let moves = null
-async function GET() {
-    try {
-        const response = await fetch("https://lichess.org/api/puzzle/daily")
-        if (!response.ok) {throw new Error(`HTTPS error! ${response.status}`)}
-        const data = await response.json()
-        moves = data.game.pgn
-    }
-    catch (error) {console.error(error)}
-}
-await GET()
-moves = moves.split(" ")
-
-const board = new Chess()
-moves.forEach(movePlease)
-function movePlease(value, index, array) {board.move(value)}
-
-console.log(board.ascii())
+document.getElementById("today").innerText = `What's the date today? Yep, it is ${today.getDate()} ${today.toLocaleDateString("en-GB", {month: "long"})} ${today.getFullYear()}! Well, at least in your time zone.`
+document.getElementById("andSo").innerHTML = "<p>Anyway, these are your <i>Daily Stuffs</i>:<p>"
     </script>
+    <script type="module" src="puzzle.js"></script>
 </body>
 </html>

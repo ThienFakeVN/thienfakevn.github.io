@@ -59,6 +59,11 @@ a#box {
     margin: 10px
 }
 
+#board {
+    width: 480px;
+    max-width: 70%
+}
+
 /*button#main {
     color: white;
     font-family: "Consolas", "courier new";

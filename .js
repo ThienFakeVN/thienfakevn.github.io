@@ -1,16 +1,18 @@
-let globalData = null;
+import {Chessboard, FEN, INPUT_EVENT_TYPE} from "./path/to/Chessboard.js"
+import {Markers} from "./path/to/extensions/markers/Markers.js"
 
-async function getData() {
-  try {
-    const response = await fetch('https://lichess.org/api/puzzle/daily');
-    const data = await response.json();
-    
-    globalData = data; // Assign to global variable
-    //console.log('Data loaded:', globalData);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
+const board = new Chessboard(document.getElementById("board"), {
+        position: FEN.start,
+        assetsUrl: "../assets/",
+        extensions: [{class: Markers}] // Looks better with markers. (Don't forget to also include the CSS for the markers)
+    })
 
-await getData();
-console.log(globalData); // ✅ Data is available here
+    board.enableMoveInput(inputHandler) // This enables the move input
+
+    function inputHandler(event) {
+        console.log(event)
+        if(event.type === INPUT_EVENT_TYPE.moveInputStarted || 
+                event.type === INPUT_EVENT_TYPE.validateMoveInput) {
+            return true // false cancels move
+        }
+    }
