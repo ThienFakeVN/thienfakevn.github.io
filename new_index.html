@@ -19,16 +19,22 @@
     </div>
     <p>You want more? <i>Coming soon!</i></p>
     <h1>Other utilities</h1>
-    <p id="today">What's the date today? Let me check...</p>
-    <p id="andSo">Well, whatever. These are your <i>Daily Stuffs</i>:</p>
-    <p>(My apology, but the chess puzzle hasn't finished yet. Still, you can check out other things, or view today's puzzle's position and FEN in Developer Mode/DevTools.)</p>
-    <!--<div id="board"></div>-->
-    <p></p>
-    <script>
-const today = new Date()
-document.getElementById("today").innerText = `What's the date today? Yep, it is ${today.getDate()} ${today.toLocaleDateString("en-GB", {month: "long"})} ${today.getFullYear()}! Well, at least in your time zone.`
-document.getElementById("andSo").innerHTML = "<p>And so, these are your <i>Daily Stuffs</i>:<p>"
-    </script>
-    <script type="module" src="puzzle.js"></script>
+        <p id="today">What's the date today? Let me check...</p>
+        <p id="andSo">Well, whatever. These are your <i>Daily Stuffs</i>:</p>
+        <h2>Today in different calendars</h2>
+            <p id="gregorian">Should you learn enough about calendars, you will know that... oh wait, what's the date today again?</p>
+            <p id="julian">For context, we used to use the Julian calendar back then. Had we still used it now, today would've been... uh idk yet.</p><!--STILL FINDING A JULIAN CONVERT MODULE!!!-->
+            <p id="islamic"></p>
+            <p id="vietnamese"></p>
+            <h3>Today's Vietnamese celebrations</h3>
+        <h2>Today's chess puzzle (from Lichess)</h2>
+            <p>(My apology, but the chess puzzle hasn't finished yet. Still, you can check out other things, or view today's puzzle's position and FEN in Developer Mode/DevTools.)</p>
+            <!--<div id="board"></div>-->
+        <h2>Today's words</h2>
+
+        <h2>Today's DIABOLICAL maths problems</h2>
+
+            <script type="module" src="date.js"></script>
+            <script type="module" src="puzzle.js"></script>
 </body>
 </html>

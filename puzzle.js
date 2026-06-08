@@ -1,5 +1,5 @@
-import { Chess } from "https://esm.sh/chess.js"
-import { Chessboard, FEN } from "https://cdn.jsdelivr.net/npm/cm-chessboard/src/Chessboard.js"
+import {Chess} from "https://esm.sh/chess.js"
+import {Chessboard, FEN} from "https://cdn.jsdelivr.net/npm/cm-chessboard/src/Chessboard.js"
 
 let moves = null
 async function GET() {
