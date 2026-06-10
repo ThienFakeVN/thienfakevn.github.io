@@ -26,7 +26,7 @@ function gregorianToJcd(today = new Date()) {
     }
 }
 
-function gregorianToJulian(today = new Date(), monthName = false) {
+function gregorianToJulian(today = new Date()) {
     const jcd = gregorianToJcd(today).jcd
 
     let c = jcd + 32082
@@ -38,25 +38,7 @@ function gregorianToJulian(today = new Date(), monthName = false) {
     let month = m + 3 - 12 * Math.floor(m / 10)
     let year = d - 4800 + Math.floor(m / 10)
 
-    /*if (monthName === true) {
-        switch (month) {
-            case 1: month = "January"; break
-            case 2: month = "February"; break
-            case 3: month = "March"; break
-            case 4: month = "April"; break
-            case 5: month = "May"; break
-            case 6: month = "June"; break
-            case 7: month = "July"; break
-            case 8: month = "August"; break
-            case 9: month = "September"; break
-            case 10: month = "October"; break
-            case 11: month = "November"; break
-            case 12: month = "December"; break
-        }
-        return {year: year, month: month, day: day, troubleshootHelper: [jcd, c, d, e, m]} // No more servants of no one
-    }*/
-
-    return {year: year, month: month, day: day, troubleshootHelper: [jcd, c, d, e, m]} // No more servants of no one
+    return {year: year, month: month, day: day, troubleshootHelper: [jcd, c, d, e, m]} // No more servants of no one!
 }
 
 export {gregorianToJcd, gregorianToJulian}
