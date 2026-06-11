@@ -32,6 +32,15 @@ let toDate = `${today.getDate()} ${today.toLocaleDateString("en-GB", {month: "lo
 let julianMonth = toMonthName()
 let vietnameseMonth = toMonthName(true)
 
+export const packedDates = {
+    gregorian: toDate,
+    julian: `${julianToday.day} ${julianMonth} ${julianToday.year}`,
+    julianDay: `${julianToday.troubleshootHelper[0]}`,
+    islamic: `${islamicToday}`,
+    persian: `${persianToday}`,
+    vietnamese: `${vietnameseToday._lunarDate.day} ${vietnameseMonth} ${vietnameseToday._lunarDate.year}`,
+}
+
 if (document.getElementById("today")) {
     if ("Temporal" in globalThis) {
         const todayTemporal = Temporal.Now.zonedDateTimeISO()
@@ -40,13 +49,11 @@ if (document.getElementById("today")) {
     }
     else {document.getElementById("today").innerText = `What's the date today? Yep, it is ${toDate}! Well, at least in whatever your time zone is.`}
     document.getElementById("andSo").innerHTML = "And so, these are your <i>Daily Stuffs</i>:"
-}
 
-export const packedDates = {
-    gregorian: toDate,
-    julian: `${julianToday.day} ${julianMonth} ${julianToday.year}`,
-    julianDate: `${julianToday.troubleshootHelper[0]}`,
-    islamic: `${islamicToday}`,
-    persian: `${persianToday}`,
-    vietnamese: `${vietnameseToday._lunarDate.day} ${vietnameseMonth} ${vietnameseToday._lunarDate.year}`,
+    document.getElementById("gregorian").innerHTML = `<b>Gregorian calendar: ${packedDates.gregorian}</b>`
+    document.getElementById("julian").innerText = `Julian calendar: ${packedDates.julian}`
+    document.getElementById("julianDay").innerText = `Julian day: ${packedDates.julianDay}`
+    document.getElementById("islamic").innerText = `Islamic/Lunar Hijri calendar: ${packedDates.islamic}`
+    document.getElementById("persian").innerText = `Persian/Solar Hijri calendar: ${packedDates.persian}`
+    document.getElementById("vietnamese").innerText = `Vietnamese lunisolar calendar: ${packedDates.vietnamese}`
 }

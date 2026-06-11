@@ -2,9 +2,9 @@
 <html lang="en-GB">
 <head>
     <title>ThienFakeVN</title>
-    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="../main_style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cm-chessboard/assets/chessboard.css">
-    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" href="../assets/favicon.ico">
     <meta name="author" content="ThienFakeVN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -14,17 +14,22 @@
     <p>My name is <b>Ngô Trần Quang Thiện</b>, but you can call me <b>ThienFakeVN</b>.</p>
     <p>I put several things on my website:</p>
     <div style="display: flex; flex-wrap: wrap; justify-content: center">
-        <a href="/blog/" id="box"><img src="assets/Book_and_Quill_JE2_BE2.png"><p style="margin:0px"><b>My blog</b><br>Where I post things I'm interested in.</p></a>
-        <a href="/bai-cao/" id="box"><img src="assets/cards_special_thanks_to_Дмитрий_Фомин.png" style="width: 220px; height: 160px"><p style="margin:0px"><b>Bài cào</b><br>A Vietnamese basic card game.</p></a>
+        <a href="/blog/" id="box"><img src="../assets/Book_and_Quill_JE2_BE2.png"><p style="margin:0px"><b>My blog</b><br>Where I post things I'm interested in.</p></a>
+        <a href="/bai-cao/" id="box"><img src="../assets/cards_special_thanks_to_Дмитрий_Фомин.png" style="width: 220px; height: 160px"><p style="margin:0px"><b>Bài cào</b><br>A Vietnamese basic card game.</p></a>
     </div>
     <p>You want more? <i>Coming soon!</i></p>
     <h1>Other utilities</h1>
         <p id="today">What's the date today? Let me check...</p>
         <p id="andSo">Well, whatever. These are your <i>Daily Stuffs</i>: (ist still under development)</p>
         <div class="container">
-            <div>
+            <div style="width: 36%">
                 <h2>Today in different calendars</h2>
-                    <p></p>
+                <p id="gregorian"></p>
+                <p id="julian"></p>
+                <p id="julianDay"></p>
+                <p id="islamic"></p>
+                <p id="persian"></p>
+                <p id="vietnamese"></p>
             </div>
         </div>
         <!--
