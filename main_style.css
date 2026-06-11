@@ -70,6 +70,10 @@ abbr, dfn {
     background-color: rgb(200, 200, 200)
 }
 
+.container {display: flex}
+
+.container > div {width: 20%}
+
 /*button#main {
     color: white;
     font-family: "Consolas", "courier new";
