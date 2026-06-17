@@ -75,19 +75,16 @@ abbr, dfn {
     flex-wrap: wrap;
     justify-content: center
 }
-
 .container > div {
     padding-left: 10px;
     padding-right: 10px;
     border: gray;
     border-style: dashed
 }
-
 .container > div > h2 {
     margin: 5px;
     font-size: 16px
 }
-
 .container > div > p {
     padding: 0px;
     margin: 5px;
