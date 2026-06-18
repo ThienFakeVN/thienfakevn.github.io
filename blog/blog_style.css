@@ -21,3 +21,9 @@ img {
     margin: 5px;
     float: right
 }
+
+abbr, dfn {
+    font-style: normal !important;
+    border-bottom-style: dotted !important;
+    background-color: rgb(200, 200, 200) !important
+}

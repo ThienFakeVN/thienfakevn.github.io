@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <title>Today in different calendars — ThienFakeVN's blog</title>
+    <link rel="stylesheet" href="../main_style.css">
+    <link rel="stylesheet" href="blog_style.css">
+    <link rel="icon" href="../assets/favicon.ico">
+    <meta name="description" content="Today in different calendars">
+    <meta name="keywords" content="blog, blogs, thienfakevn, thieenjvn">
+    <meta name="author" content="ThienFakeVN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style id="season"></style>
+</head>
+<body>
+    <div class="content">
+        <h1>Today in different calendars</h1>
+            <p id="gregorian/julian">Should you learn enough about calendars, you will know that... oh wait, what's the date today again? You are still checking? I'd explain how the Gregorian and Julian calendars differ from each other meanwhile.</p>
+            <p>&laquo;Why did we switch to use the Gregorian calendar?&raquo; you may ask. Well, in October 1582, Pope Gregory XIII dropped a new update for the Julian calendar... no, more like a revamp, which is the Gregorian calendar we use today. &laquo;So what changes did he make?&raquo; you may ask once more. Apparently, the former Julian calendar has 3 common years followed by a leap year, which means each leap year is a multiple of 4. The Gregorian calendar, however, adds a requirement for a year to be a leap year: if the year that should be a leap year is divisible by 100, it has to also be divisible by 400. This means that 2018, 2020, 2024 were leap years since they are divisible by 4 and not by 100; 1600, 2000, 2400 were and is also leap years as they are divisible by 4, 100, and 400; 1900, 2100 was and is not leap years because whilst they are divisible by 4, they are also multiples of 100 but not of 400.</p>
+            <p>Due to this adjustment, the average calendar year is 365.2425 days long instead of 365.2425 days, thus closer to <dfn title="The time that the Sun takes to return to the same position in the sky as viewed from an astronomical object of the Solar System, such as and in this context, only Earth">a tropical year</dfn> which is approximately 365.2422 days long.</p>
+            <p>All those changes (actually only one) make the Julian calendar 13 days behind the Gregorian one, don't they? Well, they do, but for now. You see, since the Gregorian calendar skips some leap years, so for each year being skipped, the gap grows by one day, which was 10 initially. For example, since 1700 and until 1799 (when 1700 was skipped), the Julian calendar was 11 days behind the Gregorian one; since 1800 and until 1899 (when 1800 was skipped), the gap was 12 days; since 1900 until 2099 (when 1900 was skipped but 2000 wasn't), big G's calendar has been ahead of big J's by 13 days, and it will be 14 from 2100 until 2199 (when 2100 will be skipped). &laquo;Why 10 days initially?&raquo; you may ask one more time. Well, my apology since I forgot to tell you that Pope Gregory XIII has also skipped 10 days in October 1582 — 4 October was followed by 15 October. Of course this is because of the fact that the leap days since the Julian calendar went into effect (in 46 BCE) that should've been skipped weren't skipped and they had added up to about 10 days before the Gregorian calendar update was released.</p>
+            <p>Oh my that's a lot for these 2 calendars, isn't that? Oh well, let's move on to the next ones.</p>
+            <p id="islamic">Ok so it's... what, what again? My apology, but I couldn't hear you.</p>
+            <p id="persian">Well, I guess I'd just explain the name &laquo;Hijri&raquo; calendars first.</p>
+            <p>These 2 are both Hijri calendars because they both share an <dfn title="A reference point from which time is measured (basically the starting point of a calendar)">epoch</dfn> which is the Hijrah, the journey the Islamic prophet Muhammad and his followers took from Mecca to Medina. Muslim back then were persecuted in Mecca, the city from where Islam originated, so they had to migrate to Medina. In the Julian calendar, the Muslims migrated in 16 July 622.</p>
+            <p id="vietnamese">Still nothing? Bloody hell! Now I have to act like I'm insane and talking anything. Fuck the Chinese!</p>
+            <p>Sorry, just kidding! The actual reason why it's not added because... I'm too lazy.</p>
+            <section class="credit">
+                <p id="credit"></p>
+            </section>
+    </div>
+    <script type="module">
+        import {packedDates} from "../new-main-page/date.js"
+
+        document.getElementById("gregorian/julian").innerHTML = `Should you learn enough about calendars, you will know that <u>${packedDates.gregorian}</u> is actually the date today in the Gregorian calendar, the same calendar we have used since October 1582. For context, we used to use the Julian calendar back then. Had we still used it, today would've been <u>${packedDates.julian}</u>. Very cool, no?`
+        document.getElementById("islamic").innerHTML = `So, have you heard about &laquo;Ramadan&raquo;? It's one of the month in the Hijri calendar, aka the Islamic calendar. Today in this calendar is <u>${packedDates.islamic}</u>. Talking about Islam and calendars, the well-known Islamic calendar above is a lunar calendar, whose months are based on the cycles of the Moon, and there's actually another Hijri calendar that is based on the Earth's orbit around the Sun. If you are an Iranian, then you should... wait. If you are indeed an Iranian, how the hell do you even have connection to the Internet, I thought they shut down the Internet in Iran, like wtfymihcwtihdygehiicbtlbralfmseifhghteifhnifghtyko`
+        document.getElementById("persian").innerHTML = `Ok, so anyway, let me just assume that you Iranian are not in Iran right now, or they have finally restored the Internet there. Either way, you should already know about the Solar Hijri calendar, which is the official calendar of Iran. Today in this calendar is <u>${packedDates.persian}</u>.`
+        document.getElementById("vietnamese").innerHTML = `One more calendar: Today is <u>${packedDates.vietnamese}</u> in the Vietnamese calendar, which is mainly used to observe lunisolar holidays, such as Tết Nguyên Đán (Lunar New Year) or Tết Trung Thu (Mid-Autumn Festival). This calendar is, in fact, based on the Chinese calendar, and one of the calendars that are based on it. But I'm not adding then any time soon! Since I'm a Vietnamese nationalist, fuck the Chinese and their calendar, haha!`
+        </script>
+    <script src="blog_seasons.js"></script>
+</body>
