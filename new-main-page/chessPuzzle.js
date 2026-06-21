@@ -1,5 +1,5 @@
 import {Chess, WHITE, BLACK, PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING} from "https://esm.sh/chess.js"
-import {Chessboard, COLOR as COLOUR, FEN, INPUT_EVENT_TYPE as IET} from "https://cdn.jsdelivr.net/npm/cm-chessboard/src/Chessboard.js"
+import {Chessboard, FEN, INPUT_EVENT_TYPE as IET} from "https://cdn.jsdelivr.net/npm/cm-chessboard/src/Chessboard.js"
 import {Markers, MARKER_TYPE} from "https://cdn.jsdelivr.net/npm/cm-chessboard/src/extensions/markers/Markers.js"
 
 const board = new Chessboard(document.getElementById("board"), {
@@ -28,10 +28,12 @@ const puzzle = new Chess()
 puzzle.load(position)
 console.log(puzzle.ascii())
 
+let currentMove = 0
+let move = false
+// board.addMarker(MARKER_TYPE.dot, "e4")
 board.setPosition(position)
 board.setOrientation(puzzle.turn())
-let currentMove = 0
-// board.addMarker(MARKER_TYPE.dot, "e4")
+document.getElementById("asWhom").textContent += (puzzle.turn() === "w") ? "White!" : "Black!"
 board.enableMoveInput((event) => {
     console.log(event)
     switch (event.type) {
@@ -42,7 +44,8 @@ board.enableMoveInput((event) => {
             console.log(`validateMoveInput: ${event.squareFrom}${event.squareTo}`)
             if (event.squareFrom + event.squareTo !== solution[currentMove]) {break}
             console.log("Ist valid!")
-            currentMove + 2
+            currentMove += 1
+            move = true
             return true
         case IET.moveInputCanceled:
             console.log(`moveInputCanceled`)
@@ -54,5 +57,15 @@ board.enableMoveInput((event) => {
             console.log(`movingOverSquare: ${event.squareTo}`)
             break
     }
-}, puzzle.turn()) // Concerns: check piece for validate moves... maybe confirm move is correct is better though
+    if (move) {
+        if (currentMove + 1 <= solution.length) {
+            board.movePiece(solution[currentMove].slice(0, 2), solution[currentMove].slice(2), true)
+            currentMove += 1
+            move = false
+        }
+        else {board.disableMoveInput()}
+    }
+}, puzzle.turn())
+
+ // Concerns: check piece for validate moves... maybe confirm move is correct is better though
 //*/

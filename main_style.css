@@ -87,7 +87,7 @@ abbr, dfn {
 .container > div > p {
     padding: 0px;
     margin: 5px;
-    font-size: 12px
+    font-size: small
 }
 
 /*button#main {
