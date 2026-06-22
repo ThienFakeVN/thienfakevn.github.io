@@ -1,4 +1,4 @@
-const arr = ["Kris", "Susie", "Ralsei"]
+const party = ["Kris", "Susie", "Ralsei"]
 
-if (arr[3]) {console.log("Ist good")}
+if (party[3]) {console.log("Good")}
 else {console.log("Where is Noelle?")}

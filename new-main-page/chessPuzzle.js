@@ -37,33 +37,34 @@ document.getElementById("asWhom").textContent += (puzzle.turn() === "w") ? "Whit
 board.enableMoveInput((event) => {
     console.log(event)
     switch (event.type) {
-        case IET.moveInputStarted:
-            console.log(`moveInputStarted: ${event.squareFrom}`)
-            return true
+        case IET.moveInputStarted: return true
         case IET.validateMoveInput:
-            console.log(`validateMoveInput: ${event.squareFrom}${event.squareTo}`)
-            if (event.squareFrom + event.squareTo !== solution[currentMove]) {break}
-            console.log("Ist valid!")
+            //if () {}
+            if (event.squareFrom + event.squareTo !== solution[currentMove]) {
+                document.getElementById("result").style = "color: red; font-size: medium"
+                document.getElementById("result").innerText = "WRONG MOVE!"
+                break
+            }
             currentMove += 1
             move = true
             return true
-        case IET.moveInputCanceled:
-            console.log(`moveInputCanceled`)
-            break
-        case IET.moveInputFinished:
-            console.log(`moveInputFinished`)
-            break
-        case IET.movingOverSquare:
-            console.log(`movingOverSquare: ${event.squareTo}`)
-            break
+        case IET.moveInputCanceled: break
+        case IET.moveInputFinished: break
+        case IET.movingOverSquare: break
     }
     if (move) {
         if (currentMove + 1 <= solution.length) {
             board.movePiece(solution[currentMove].slice(0, 2), solution[currentMove].slice(2), true)
             currentMove += 1
             move = false
+            document.getElementById("result").style = "color: green; font-size: medium"
+            document.getElementById("result").innerText = "Correct move! You shall continue..."
         }
-        else {board.disableMoveInput()}
+        else {
+            board.disableMoveInput()
+            document.getElementById("result").style = "color: green; font-size: medium"
+            document.getElementById("result").innerText = "Congrats! You completed the puzzle!"
+        }
     }
 }, puzzle.turn())
 
