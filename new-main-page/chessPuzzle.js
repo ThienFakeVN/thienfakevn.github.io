@@ -14,7 +14,7 @@ let position = null
 let initialPly = null
 async function getPuzzle() {
     try {
-        const response = await fetch("https://lichess.org/api/puzzle/E7avi")
+        const response = await fetch("https://lichess.org/api/puzzle/daily") //6KDMa
         if (!response.ok) {throw new Error(`HTTPS error! ${response.status}`)}
         const data = await response.json()
         solution = data.puzzle.solution
@@ -32,8 +32,9 @@ console.log(puzzle.ascii())
 let legalMoves = []
 let convertedLegalMoves = []
 let currentMove = 0
-let isCastling = ""
-let move = false
+let isCastling = false
+let move = null
+let opponentMove = null
 // board.addMarker(MARKER_TYPE.dot, "e4")
 board.setPosition(position)
 board.setOrientation(puzzle.turn())
@@ -43,44 +44,52 @@ board.enableMoveInput((event) => {
     switch (event.type) {
         case IET.moveInputStarted: return true
         case IET.validateMoveInput:
-            //if (legalMoves[i].includes("-")) {
-            //    if ()
-            //}
-            legalMoves = puzzle.moves({square: event.squareFrom})
-            for (let i = 0; i < legalMoves.length; i++) {
-                if (!isCastling) {convertedLegalMoves[i] = notationConverter(legalMoves[i])}
-                else {convertedLegalMoves[i] = castlingConverter(legalMoves[i], puzzle.turn())}
-                console.log(legalMoves[i], convertedLegalMoves[i])
+            console.log(event.squareFrom + event.squareTo)
+            console.log(solution[currentMove])
+            try {
+                move = puzzle.move({
+                    from: event.squareFrom,
+                    to: event.squareTo,
+                })
             }
-            if (!convertedLegalMoves.includes(event.squareTo)) {break}
-            if (event.squareFrom + event.squareTo !== solution[currentMove]) {
-                document.getElementById("result").style = "color: red; font-size: medium"
-                document.getElementById("result").innerText = "WRONG MOVE!!!"
+            catch(err) {
+                move = null
                 break
             }
-            currentMove += 1
-            move = true
-            board.movePiece()
-            return true
+            if (move) {
+                if (event.squareFrom + event.squareTo != solution[currentMove]) {
+                    puzzle.undo()
+                    document.getElementById("result").style = "color: red; font-size: medium"
+                    document.getElementById("result").innerHTML = "WRONG MOVE!!!"
+                    move = null
+                    break
+                }
+                else {
+                    document.getElementById("result").style = "color: green; font-size: medium"
+                    document.getElementById("result").innerText = "Best move! Keep going..."
+                }
+                board.setPosition(puzzle.fen(), true)
+                return true
+            }
+            return false
         case IET.moveInputCanceled: break
         case IET.moveInputFinished: break
         case IET.movingOverSquare: break
     }
     if (move) {
-        if (currentMove + 1 <= solution.length) {
-            board.movePiece(solution[currentMove].slice(0, 2), solution[currentMove].slice(2), true)
-            currentMove += 1
-            console.log(board.getPosition())
-            move = false
-            document.getElementById("result").style = "color: green; font-size: medium"
-            document.getElementById("result").innerText = "Best move! Keep going..."
-            puzzle.load(board.getPosition)
-            convertedLegalMoves = ""
-        }
-        else {
+        if (currentMove + 1 >= solution.length) {
             board.disableMoveInput()
             document.getElementById("result").style = "color: green; font-size: medium"
             document.getElementById("result").innerText = "Congrats! You have completed the puzzle!"
+        }
+        else {
+            currentMove += 1
+            puzzle.move({
+                from: solution[currentMove].slice(0, 2),
+                to: solution[currentMove].slice(2)
+            })
+            board.setPosition(puzzle.fen(), true)
+            currentMove += 1
         }
     }
 }, puzzle.turn())
