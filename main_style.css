@@ -58,6 +58,7 @@ a#box {
     width: calc(100% / 4.5);
     margin: 10px
 }
+p#box {margin:0px}
 
 #board {
     width: 480px;

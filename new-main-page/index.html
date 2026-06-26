@@ -16,9 +16,10 @@
     <p>My name is <b>Ngô Trần Quang Thiện</b>, but you can call me <b>ThienFakeVN</b>.</p>
     <p>I put several things on my website:</p>
     <div style="display: flex; flex-wrap: wrap; justify-content: center">
-        <a href="/blog/" id="box"><img src="../assets/Book_and_Quill_JE2_BE2.png"><p style="margin:0px"><b>My blog</b><br>Where I post things I'm interested in.</p></a>
-        <a href="/bai-cao/" id="box"><img src="../assets/cards_special_thanks_to_Дмитрий_Фомин.png" style="width: 220px; height: 160px"><p style="margin:0px"><b>Bài cào</b><br>A Vietnamese basic card game.</p></a>
-    </div>
+        <a href="/blog/" id="box"><img src="../assets/Book_and_Quill_JE2_BE2.png"><p id="box"><b>My blog</b><br>Where I post things I'm interested in.</p></a>
+        <a href="/bai-cao/" id="box"><img src="../assets/cards_special_thanks_to_Дмитрий_Фомин.png" style="width: 220px; height: 160px"><p id="box"><b>Bài cào</b><br>A Vietnamese basic card game.</p></a>
+        <a href="/countries_dictionary/" id="box" style="width: 433px !important"><img src="../assets/countries_dictionary_logo_web.png" style="width: 433px; height: 160px"><p id="box"><b>Countries Dictionary</b><br>A Python data-oriented module which provides dictionaries of countries and states, from members of UN to unrecognised ones.</p></a>
+    </div> <!-- INCLUDE: Countries Dictionary, vietnamese_jokes -->
     <p>You want more? <i>Coming soon!</i></p>
     <h1>Other utilities</h1>
         <p id="today">What's the date today? Let me check...</p>
@@ -34,12 +35,12 @@
                 <p id="vietnamese"></p>
                 <p><i>Other calendars are going to be included in the future!</i></p>
             </div>
-            <div>
+            <!--<div>
                 <h2>Today's chess puzzle</h2>
                 <div id="board" style="padding: 10px; width: 360px; height: 360px"></div>
                 <p style="font-size: medium; margin-top: 20px" id="asWhom">This is today's chess puzzle from Lichess. Find the best moves for </p>
                 <p id="result" style="font-size: medium">Let's see how you do...</p>
-            </div>
+            </div>-->
         </div>
         <!--
         <h2>Today's chess puzzle (from Lichess)</h2>
@@ -50,6 +51,6 @@
         <h2>Today's DIABOLICAL maths problems</h2>
         -->
     <script type="module" src="date.js"></script>
-    <script type="module" src="chessPuzzle.js"></script>
+    <!--<script type="module" src="chessPuzzle.js"></script>-->
 </body>
 </html>
