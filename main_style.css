@@ -91,6 +91,9 @@ abbr, dfn {
     font-size: small
 }
 
+.forDesktop {display: flex}
+.forMobile {display: none}
+
 /*button#main {
     color: white;
     font-family: "Consolas", "courier new";
@@ -109,4 +112,8 @@ button#main:hover {background-color: seagreen}*/
     a:link {color: rgb(0, 162, 232)}
     a:visited {color: rgb(63, 72, 204)}
     abbr, dfn {background-color: rgb(100, 100, 100)}
+}
+@media (max-width: 600px) {
+    .forDesktop {display: none !important}
+    .forMobile {display: block !important}
 }
