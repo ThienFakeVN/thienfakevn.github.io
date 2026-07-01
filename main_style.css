@@ -70,6 +70,7 @@ abbr, dfn {
     border-bottom-style: dotted;
     background-color: rgb(200, 200, 200)
 }
+abbr {border-bottom-style: none !important}
 
 .container {
     display: flex;

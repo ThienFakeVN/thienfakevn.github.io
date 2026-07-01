@@ -27,3 +27,4 @@ abbr, dfn {
     border-bottom-style: dotted !important;
     background-color: rgb(200, 200, 200) !important
 }
+abbr {border-bottom-style: none !important}
