@@ -68,9 +68,10 @@ p#box {margin:0px}
 abbr, dfn {
     font-style: normal;
     border-bottom-style: dotted;
-    background-color: rgb(200, 200, 200)
+    /*background-color: rgb(200, 200, 200)*/
 }
 abbr {border-bottom-style: none !important}
+dfn.explanation {border-style: dashed !important}
 
 .container {
     display: flex;
@@ -112,7 +113,7 @@ button#main:hover {background-color: seagreen}*/
     p, ul, section, h1, h2, h3, h4, h5, h6 {color: white}
     a:link {color: rgb(0, 162, 232)}
     a:visited {color: rgb(63, 72, 204)}
-    abbr, dfn {background-color: rgb(100, 100, 100)}
+    /*abbr, dfn {background-color: rgb(100, 100, 100)}*/
 }
 @media (max-width: 600px) {
     .forDesktop {display: none !important}

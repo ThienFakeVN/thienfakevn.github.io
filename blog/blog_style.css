@@ -1,5 +1,13 @@
 p, ul, section, h1, h2, h3, h4, h5, h6 {color: black}
 
+p {margin: 10px}
+
+ul {margin: 5px}
+
+h1 {text-align: center}
+
+h1, h2, h3, h4, h5, h6 {margin: 15px}
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,8 +23,6 @@ div.content {
 
 section.credit {font-size: 75%}
 
-h1 {text-align: center}
-
 img {
     margin: 5px;
     float: right
@@ -25,6 +31,6 @@ img {
 abbr, dfn {
     font-style: normal !important;
     border-bottom-style: dotted !important;
-    background-color: rgb(200, 200, 200) !important
+    /*background-color: rgb(200, 200, 200) !important*/
 }
 abbr {border-bottom-style: none !important}
