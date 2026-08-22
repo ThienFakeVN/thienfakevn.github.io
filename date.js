@@ -48,7 +48,7 @@ if (document.getElementById("today")) {
         document.getElementById("today").innerText = `What's the date today? Yep, it is ${toDate}! Well, at least in UTC${timeZone}.`
     }
     else {document.getElementById("today").innerText = `What's the date today? Yep, it is ${toDate}! Well, at least in whatever your time zone is.`}
-    document.getElementById("andSo").innerHTML = "And so, these are your <i>Daily Stuffs</i>:"
+    document.getElementById("andSo").innerHTML = "And so, these are your <i>Daily Stuffs</i>: (ist still under development)"
 
     document.getElementById("gregorian").innerHTML = `<b>Gregorian calendar: ${packedDates.gregorian}</b>`
     document.getElementById("julian").innerText = `Julian calendar: ${packedDates.julian}`

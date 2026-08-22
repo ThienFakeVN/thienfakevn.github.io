@@ -55,10 +55,13 @@ pre {
 a#box {
     text-decoration: none;
     display: block;
-    width: calc(100% / 4.5);
-    margin: 10px
+    width: calc(100% / 6);
+    margin: 8px
 }
-p#box {margin:0px}
+p#box {
+    margin:0px;
+    font-size: 14px;
+}
 
 #board {
     width: 480px;
