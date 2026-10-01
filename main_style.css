@@ -7,7 +7,7 @@ body {
     /*border-style: solid;*/
 }
 
-p, ul, ol, section {
+p, ul, ol, section, label {
     color: black;
     font-family: "Consolas", "courier new";
 }
@@ -113,7 +113,7 @@ button#main:hover {background-color: seagreen}*/
 
 @media (prefers-color-scheme: dark) {
     body {background-color: rgb(31, 31, 31)}
-    p, ul, section, h1, h2, h3, h4, h5, h6 {color: white}
+    p, ul, section, h1, h2, h3, h4, h5, h6, label {color: white}
     a:link {color: rgb(0, 162, 232)}
     a:visited {color: rgb(63, 72, 204)}
     /*abbr, dfn {background-color: rgb(100, 100, 100)}*/

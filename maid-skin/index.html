@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+    <title>Maid Minecraft skin</title>
+    <link rel="stylesheet" href="../main_style.css">
 </head>
 <body>
-    
+    <p>Oi</p>
+    <form>
+        <label for="skinImport">Import your Minecraft skin here (must be a .png file!):</label>
+        <input type="file" id="skinImport">
+    </form>
+    <canvas id="skin" width="64" height="64">[Your browser do not support canvas?! Pathetic.]</canvas>
+    <script>
+        const canvas = document.getElementById("skin");
+        const ctx = canvas.getContext("2d");
+
+        document.getElementById("skinImport").addEventListener("change", (event) => {
+            const file = event.target.files[0]
+            if (file) {
+                const filenameExtension = `${file.name.at(-4)}${file.name.at(-3)}${file.name.at(-2)}${file.name.at(-1)}`
+                if (filenameExtension === ".png") {
+                    const img = new Image()
+                }
+            }
+        })
+    </script>
 </body>
 </html>
