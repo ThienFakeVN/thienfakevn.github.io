@@ -21,7 +21,7 @@
         <ul>
             <li><a href="/bai-cao/">Bài cào</a>, a Vietnamese basic card game;</li>
             <ul>
-                <li>This game is currently not working, thus I'm going to update it in another day;</li>
+                <li>This game is currently not working, thus I'm going to update it in another day; It is also planned to merge with <a href="#thieenjgames" id="hyperlien">another project</a>;</li>
             </ul>
             <li><a href="/countries-dictionary/">Countries Dictionary</a>, a Python data-oriented module which provides dictionaries of countries and states, from members of UN to unrecognised ones;</li>
             <li><a href="https://github.com/ThienFakeVN/vietnamese_jokes">Vietnamese jokes [API]</a>, a REST API from which you (only) can retrive jokes in Vietnamese; essentially a Vietnamese version of <a href="https://github.com/15Dkatz/official_joke_api">15Dkatz's Official Joke API</a></li>
@@ -38,13 +38,24 @@
         <h2>Merged/Moved projects</h2>
             <p>These are projects that were developed as an independent one in the first place but either are now part of a bigger project, or are under consideration to be so.</p>
             <ul>
-                <li><i>SpeaksHalf</i></a> (under consideration), a game where players would guess the stripped message from each other. You can check out the original blog entry where I first mentioned it <a href="../blog/20260603a.html#speakhalf">here</a>;</li>
+                <li><i>SpeaksHalf</i></a> (under consideration), a game where players will guess the stripped message from each other. You can check out the original blog entry where I first mentioned it <a href="../blog/20260603a.html#speakhalf">here</a>;</li>
             </ul>
     <h1>Ideas</h1>
         <p>These are some of my ideas that are still residing in my mind.</p>
-        <ul>
-            <li><i>Regime Inc.</i>, an upcoming game in which you will play as one of a country's political factions, mainly parties, which will compete for power, either democratically or violently, and manage said country so that their goals are achieved. The game will feature different countries, of which each will have its own factions, government system, political culture, issues, etc. which are, most of the time, based on actual countries in real life. You can think of it like <i>Rebel Inc.</i> (which is also the game whose name inspired mine) but with political criticism and being more promising hehe;</li>
-            <li><i>ThieenjGames (game I've collected across the Global South, and sometimes North)</i>, a collection of games, including some online ones, which I enjoy or will enjoy making;</li>
+        <ul id="thanhbinh">
+            <li><i>Regime Inc.</i>, an upcoming game in which you will play as one of a country's political factions, mainly parties, which will compete for power, either democratically or violently, and manage said country so that their goals are achieved. The game will feature different countries, of which each will have its own factions, government system, political culture, issues, etc. which are, most of the time, based on actual countries in real life. You can think of it like <i>Rebel Inc.</i> (which is also the game whose name inspired mine) but with more political criticism and being more promising hehe;</li>
+            <li id="thieenjgames"><i>ThieenjGames</i> (<dfn title="game I've collected across the Global South, and sometimes North">with a motto</dfn>), a collection of games, including some online ones, which I enjoy or will enjoy making;</li>
+            <ul>
+                <li></li>
+            </ul>
         </ul>
+    <script>
+        document.getElementById("hyperlien").addEventListener("click", whatever => {
+            console.log("Oy vey!")
+            document.getElementById("thieenjgames").style.backgroundColor = "green"
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {document.getElementById("thieenjgames").style.backgroundColor = "black"}
+            else {document.getElementById("thieenjgames").style.backgroundColor = "white"}
+        })
+    </script>
 </body>
 </html>
